@@ -61,9 +61,9 @@ async function loadUsers() {
                 "${u.company.catchPhrase}"
             </p>
 
-            <div>
+            <div class="flex-1">
             <a href= "./single.html?Id=${u.id}">
-              <button class=" bg-black text-white py-3 px-3  rounded-lg mt-5 hover:bg-gray-800 w-full">
+              <button class=" bg-black text-white py-2 px-4  rounded-lg mt-4 hover:bg-gray-800 w-full">
                 View Profile
             </button>
             </a>
