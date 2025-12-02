@@ -4,7 +4,7 @@ let currentPage = 1;
 const limit = 10;
 
 async function getPosts() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/photos?_limit=60");
+  const res = await fetch("https://jsonplaceholder.typicode.com/photos?_limit=50");
   allPosts = await res.json();
 
   renderPage();
@@ -37,7 +37,7 @@ function renderPagination() {
 
   pagination.innerHTML = "";
 
-  // Previous Tugma
+
   pagination.innerHTML += `
     <li>
       <button 
@@ -50,7 +50,7 @@ function renderPagination() {
     </li>
   `;
 
-  // Raqamlar
+  
   for (let i = 1; i <= totalPages; i++) {
     pagination.innerHTML += `
       <li>
@@ -65,7 +65,7 @@ function renderPagination() {
     `;
   }
 
-  // Next Tugma
+  
   pagination.innerHTML += `
     <li>
       <button 

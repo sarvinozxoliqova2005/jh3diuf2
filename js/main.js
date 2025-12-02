@@ -1,4 +1,7 @@
 
+  
+  
+
 let currentPage = 1;
 const limit = 10;
 let posts = [];
@@ -30,9 +33,11 @@ async function renderPage(page) {
     const commentCount = await getCommentCount(post.id);
     const likes = Math.floor(Math.random() * 500);
 
-    const card = `      <div class="border rounded-xl p-4 shadow-sm bg-white">
+    const card = `
+     <div class="border rounded-xl p-4  shadow-sm bg-white">
         
-        <div class="flex items-center gap-3 mb-3">          <div class="w-10 h-10 bg-purple-500 text-white rounded-full flex items-center justify-center">
+        <div class="flex items-center gap-3 mb-3">          
+        <div class="w-10 h-10 bg-purple-500 text-white rounded-full flex items-center justify-center">
           L
           </div>
           <div>
@@ -49,7 +54,7 @@ async function renderPage(page) {
         </a>
 
        
-            <div class="flex items-center justify-between px-1 mt-4">
+            <div class="flex items-center justify-between px-2 mt-4">
 
                  <div class="flex items-center gap-4 text-gray-700">
 
@@ -275,3 +280,40 @@ document.addEventListener("click", async (e) => {
 
 loadPosts();
 
+
+
+
+
+
+  
+
+ 
+  document.addEventListener('DOMContentLoaded', () => {
+  const toggleBtn = document.getElementById('toggleSidebar');
+  const sidebar = document.getElementById('sidebar');
+  const mainContent = document.querySelector('main');
+  const toggleIcon = document.getElementById('toggleIcon');
+
+  toggleBtn.addEventListener('click', () => {
+    // Sidebar width toggle
+    sidebar.classList.toggle('w-64');
+    sidebar.classList.toggle('w-20');
+
+    // Main content margin toggle
+
+    mainContent.classList.toggle('lg:ml-64');
+    mainContent.classList.toggle('lg:ml-20');
+
+    // Toggle icon rotate
+    toggleIcon.classList.toggle('rotate-180');
+
+    // Sidebar ichidagi textlarni toggle qilish
+    const sidebarTextItems = sidebar.querySelectorAll('li span, li a, h1, p');
+    sidebarTextItems.forEach(el => {
+      if (!el.querySelector('img') && !el.querySelector('i')) {
+        el.classList.toggle('hidden');
+      }
+    });
+
+  });
+});
