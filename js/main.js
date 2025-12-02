@@ -94,7 +94,7 @@ async function renderPage(page) {
              </div>
 
 
-         <p class="text-gray-700 mb-8">${post.body}</p>
+         <p class="text-gray-700 mb-8 mt-3">${post.body}</p>
 
       
          <div class="flex justify-between text-gray-600">
