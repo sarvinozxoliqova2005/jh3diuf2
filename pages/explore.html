@@ -8,13 +8,23 @@
   </head>
   <body class="bg-gray-200">
     <div class="flex">
-      <aside
-        class="w-64 h-screen bg-white border-r border-gray-200 p-5 fixed z-50 transform-translate-x-full lg:translate-x-0 transition-all duration-300"
+      <aside id="sidebar"
+       class="fixed z-50 w-64 h-screen top-0 left-0 bg-white shadow pt-6 px-4"
       >
-        <h1 class="text-2xl font-bold">DevBlog</h1>
-        <p class="text-xs text-[gray]">JSON Explorer</p>
 
-        <!-- Feed -->
+       <div class="flex items-center justify-between">
+           <div>
+            <h1 class="text-2xl font-bold">DevBlog</h1>
+        <p class="text-xs text-[gray]">JSON Explorer</p>
+          </div>
+          <!-- TOGGLE BUTTON -->
+<button id="toggleSidebar"
+  class=" bg-white shadow p-3 rounded-xl flex items-center justify-between">
+  <img class="w-5 cursor-pointer" src="https://cdn0.iconfinder.com/data/icons/user-interface-151/24/List_menu_toggle-512.png" alt="">
+  <i id="toggleIcon" class="fa-solid fa-bars text-xl"></i>
+</button>
+         </div>
+                <!-- Feed -->
         <ul class="space-y-2 mt-6">
           <li class="flex items-center justify-between px-4 py-2">
             <a href="../index.html" class="flex items-center gap-2">
@@ -100,20 +110,22 @@
 
       <main class="flex-1 lg:ml-64 bg-gray-50 min-h-screen">
         <div
-          class="px-10 py-6 border-b border-gray-200 bg-white fixed z-10 w-full flex items-center"
+          class=" py-6 border-gray-200 bg-white fixed z-10 w-full text-center left-0"
         >
           <h1 class="text-3xl font-semibold">Explorer</h1>
         </div>
 
-        <div
+       <div class="w-full max-[600px]:pl-20">
+         <div
           id="albumGrid"
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 pt-25 pb-10"
+          class=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 pt-25 pb-10 "
         ></div>
+       </div>
 
 
 
-        <nav class="flex justify-center mt-5 pb-10" aria-label="Page navigation example">
-      <ul id="pagination" class="flex space-x-1 text-sm text-center">
+        <nav class="flex flex-wrap justify-center mt-5 pb-10" aria-label="Page navigation example">
+      <ul id="pagination" class="flex grid grid-cols-4 text-sm text-center gap-1 pl-10">
         <li>
           <a
             href="#"
