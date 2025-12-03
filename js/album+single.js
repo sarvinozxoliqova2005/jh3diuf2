@@ -22,7 +22,7 @@ function renderPage() {
 
   pagePosts.forEach(post => {
     const card = `
-      <div class="rounded-xl overflow-hidden shadow-sm bg-white">
+      <div class="rounded-xl shadow-sm bg-white">
           <img src="https://picsum.photos/500?random=${post.id}" 
                class="w-full h-[250px] object-cover"/>
       </div>

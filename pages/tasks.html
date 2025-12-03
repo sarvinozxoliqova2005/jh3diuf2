@@ -11,9 +11,21 @@
 
 
      <div class="flex">
-        <aside class="w-64 h-screen bg-white border-r border-gray-200 p-5 fixed z-50 transform-translate-x-full lg:translate-x-0 transition-all duration-300">
+       <aside id="sidebar"
+           class="fixed z-50 w-64 h-screen top-0 left-0 bg-white shadow pt-6 px-4"
+      >
+         <div class="flex items-center justify-between">
+           <div>
             <h1 class="text-2xl font-bold">DevBlog</h1>
-            <p class="text-xs text-[gray]">JSON Explorer</p>
+        <p class="text-xs text-[gray]">JSON Explorer</p>
+          </div>
+          <!-- TOGGLE BUTTON -->
+<button id="toggleSidebar"
+  class=" bg-white shadow p-2 rounded-xl flex items-center justify-between">
+  <img class="w-7 h-7 cursor-pointer" src="https://cdn0.iconfinder.com/data/icons/user-interface-151/24/List_menu_toggle-512.png" alt="">
+  <i id="toggleIcon" class="fa-solid fa-bars text-xl"></i>
+</button>
+         </div>
 
                  <!-- Feed -->
             <ul class="space-y-2 mt-6">
@@ -71,7 +83,7 @@
         <main class="flex-1 pt-2  px-10 ml-70 min-h-screen">
            <!-- HEADER (fixed bo'ladi) -->
 <div id="tasksHeader"
-     class="fixed top-0 left-0 w-full bg-white z-20 shadow-md px-90 p-5 ml-5">
+     class="fixed top-0 left-0 w-full bg-white z-20 shadow-md pl-25  p-5 ml-5">
 
     <h1 class="text-2xl font-bold text-gray-800 mb-3">Tasks</h1>
 
@@ -88,8 +100,9 @@
     </div>
 </div>
 
-<!-- TASK LIST (header pastida chiqishi uchun margin beramiz) -->
-<div id="taskList" class="pt-[200px] flex flex-col gap-3"></div>
+<div class="w-full">
+    <div id="taskList" class="pt-[200px] flex flex-col gap-3"></div>
+</div>
 
         
         <div id="photos" class="space-y-4 mt-50 flex flex-col gap-3"></div>
