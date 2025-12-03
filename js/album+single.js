@@ -90,3 +90,37 @@ function changePage(page) {
 }
 
 getPosts();
+
+
+
+
+
+ document.addEventListener('DOMContentLoaded', () => {
+  const toggleBtn = document.getElementById('toggleSidebar');
+  const sidebar = document.getElementById('sidebar');
+  const mainContent = document.querySelector('main');
+  const toggleIcon = document.getElementById('toggleIcon');
+
+  toggleBtn.addEventListener('click', () => {
+    // Sidebar width toggle
+    sidebar.classList.toggle('w-64');
+    sidebar.classList.toggle('w-20');
+
+    // Main content margin toggle
+
+    mainContent.classList.toggle('lg:ml-64');
+    mainContent.classList.toggle('lg:ml-20');
+
+    // Toggle icon rotate
+    toggleIcon.classList.toggle('rotate-180');
+
+    // Sidebar ichidagi textlarni toggle qilish
+    const sidebarTextItems = sidebar.querySelectorAll('li span, li a, h1, p');
+    sidebarTextItems.forEach(el => {
+      if (!el.querySelector('img') && !el.querySelector('i')) {
+        el.classList.toggle('hidden');
+      }
+    });
+
+  });
+});
